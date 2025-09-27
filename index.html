@@ -3,178 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sporting Gear Pro | High-Performance Sportswear</title>
+    <title>Grizzletes | Zimbabwe's Premier Fitness Wear</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Base Styles */
+        :root {
+            --primary: #FF6B35;
+            --secondary: #004E89;
+            --accent: #FFD166;
+            --dark: #1A1A2E;
+            --light: #F8F9FA;
+            --text: #333333;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        :root {
-            --primary: #1a73e8;
-            --secondary: #34a853;
-            --accent: #ea4335;
-            --dark: #202124;
-            --light: #f8f9fa;
-            --gray: #5f6368;
-        }
-
+        
         body {
             background-color: var(--light);
-            color: var(--dark);
+            color: var(--text);
             overflow-x: hidden;
         }
-
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
+            background-color: var(--dark);
+            padding: 15px 0;
+            position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-
-        .header-container {
+        
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
         }
-
+        
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.8rem;
-            font-weight: 700;
         }
-
+        
         .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: var(--primary);
+            font-size: 2rem;
             animation: pulse 2s infinite;
         }
-
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--light);
+            letter-spacing: 1px;
+        }
+        
+        .logo-text span {
+            color: var(--primary);
+        }
+        
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 30px;
         }
-
+        
         nav a {
-            color: white;
+            color: var(--light);
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            font-size: 1.1rem;
+            transition: color 0.3s;
             position: relative;
         }
-
+        
         nav a:hover {
-            color: #ffd700;
+            color: var(--primary);
         }
-
-        nav a::after {
+        
+        nav a.active {
+            color: var(--primary);
+        }
+        
+        nav a.active::after {
             content: '';
             position: absolute;
             bottom: -5px;
             left: 0;
-            width: 0;
-            height: 2px;
-            background: #ffd700;
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after {
             width: 100%;
+            height: 3px;
+            background-color: var(--primary);
         }
-
-        .header-actions {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .icon-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            color: white;
+        
+        .cart-icon {
+            position: relative;
+            color: var(--light);
+            font-size: 1.5rem;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: color 0.3s;
+        }
+        
+        .cart-icon:hover {
+            color: var(--primary);
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: bold;
         }
-
-        .icon-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
-        }
-
+        
         /* Hero Section */
         .hero {
-            margin-top: 80px;
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #1a73e8, #34a853);
-            color: white;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--secondary) 100%);
+            padding: 80px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
-
+        
         .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
             position: relative;
             z-index: 2;
         }
-
+        
         .hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
+            color: var(--light);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
-
+        
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.2s both;
+            font-size: 1.3rem;
+            color: var(--accent);
+            max-width: 700px;
+            margin: 0 auto 30px;
         }
-
-        .cta-button {
+        
+        .btn {
             display: inline-block;
-            background: var(--accent);
+            background-color: var(--primary);
             color: white;
             padding: 12px 30px;
             border-radius: 30px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.1rem;
             transition: all 0.3s;
-            animation: fadeInUp 1s ease 0.4s both;
+            border: none;
+            cursor: pointer;
         }
-
-        .cta-button:hover {
-            background: #d23c30;
+        
+        .btn:hover {
+            background-color: #e55a2b;
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-
-        .hero-graphics {
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Animated Background Elements */
+        .floating-shapes {
             position: absolute;
             top: 0;
             left: 0;
@@ -182,431 +203,340 @@
             height: 100%;
             z-index: 1;
         }
-
-        .floating-shape {
+        
+        .shape {
             position: absolute;
-            border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
             animation: float 6s infinite ease-in-out;
         }
-
-        .shape-1 {
-            width: 100px;
-            height: 100px;
+        
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
             top: 10%;
             left: 10%;
             animation-delay: 0s;
         }
-
-        .shape-2 {
-            width: 150px;
-            height: 150px;
+        
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
             top: 60%;
             left: 80%;
-            animation-delay: 2s;
+            animation-delay: 1s;
         }
-
-        .shape-3 {
-            width: 70px;
-            height: 70px;
+        
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
             top: 80%;
             left: 20%;
-            animation-delay: 4s;
+            animation-delay: 2s;
         }
-
-        /* Categories Section */
-        .categories {
-            padding: 4rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
+        
+        .shape:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 30%;
+            left: 70%;
+            animation-delay: 3s;
         }
-
+        
+        /* Catalogue Section */
+        .catalogue {
+            padding: 80px 0;
+        }
+        
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            color: var(--dark);
+            margin-bottom: 50px;
             position: relative;
         }
-
-        .section-title::after {
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
             content: '';
             display: block;
             width: 80px;
             height: 4px;
-            background: var(--primary);
+            background-color: var(--primary);
             margin: 10px auto;
             border-radius: 2px;
         }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .category-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-            position: relative;
-            height: 250px;
+        
+        .filters {
             display: flex;
-            align-items: center;
             justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
         }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .category-graphic {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .running-graphic {
-            background: linear-gradient(135deg, #1a73e8, #34a853);
-        }
-
-        .basketball-graphic {
-            background: linear-gradient(135deg, #ea4335, #fbbc05);
-        }
-
-        .yoga-graphic {
-            background: linear-gradient(135deg, #34a853, #1a73e8);
-        }
-
-        .soccer-graphic {
-            background: linear-gradient(135deg, #fbbc05, #ea4335);
-        }
-
-        .graphic-icon {
-            font-size: 4rem;
-            color: white;
-            opacity: 0.8;
-            animation: bounce 2s infinite;
-        }
-
-        .category-name {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        /* Featured Products */
-        .featured-products {
-            padding: 4rem 2rem;
-            background: #f5f7fa;
-        }
-
-        .products-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-graphic {
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-1 {
-            background: linear-gradient(135deg, #1a73e8, #8ab4f8);
-        }
-
-        .product-2 {
-            background: linear-gradient(135deg, #34a853, #81c995);
-        }
-
-        .product-3 {
-            background: linear-gradient(135deg, #ea4335, #f28b82);
-        }
-
-        .product-4 {
-            background: linear-gradient(135deg, #fbbc05, #fdd663);
-        }
-
-        .product-shape {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .shape-a {
-            width: 120px;
-            height: 120px;
-            top: -30px;
-            right: -30px;
-        }
-
-        .shape-b {
-            width: 80px;
-            height: 80px;
-            bottom: -20px;
-            left: -20px;
-        }
-
-        .product-icon {
-            font-size: 3.5rem;
-            color: white;
-            z-index: 2;
-        }
-
-        .product-info {
-            padding: 1.5rem;
-        }
-
-        .product-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-info p {
-            color: var(--gray);
-            margin-bottom: 1rem;
-        }
-
-        .product-price {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .add-to-cart {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 8px 15px;
+        
+        .filter-btn {
+            background-color: white;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            padding: 8px 20px;
             border-radius: 20px;
             cursor: pointer;
             transition: all 0.3s;
             font-weight: 600;
         }
-
-        .add-to-cart:hover {
-            background: #0d5bb9;
-            transform: scale(1.05);
-        }
-
-        /* Newsletter */
-        .newsletter {
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--secondary);
             color: white;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            z-index: 2;
+        }
+        
+        .product-image {
+            height: 250px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-illustration {
+            width: 80%;
+            height: 80%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-illustration {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-category {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* Newsletter Section */
+        .newsletter {
+            background-color: var(--secondary);
+            padding: 60px 0;
             text-align: center;
+            color: white;
         }
-
-        .newsletter-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
+        
         .newsletter h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
-
+        
         .newsletter p {
-            margin-bottom: 2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
             font-size: 1.1rem;
         }
-
+        
         .newsletter-form {
             display: flex;
-            max-width: 400px;
+            max-width: 500px;
             margin: 0 auto;
         }
-
+        
         .newsletter-input {
             flex: 1;
-            padding: 12px 15px;
+            padding: 12px 20px;
             border: none;
             border-radius: 30px 0 0 30px;
             font-size: 1rem;
         }
-
-        .newsletter-button {
-            background: var(--accent);
+        
+        .newsletter-btn {
+            background-color: var(--primary);
             color: white;
             border: none;
             padding: 0 25px;
             border-radius: 0 30px 30px 0;
+            font-weight: 700;
             cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
+            transition: background-color 0.3s;
         }
-
-        .newsletter-button:hover {
-            background: #d23c30;
+        
+        .newsletter-btn:hover {
+            background-color: #e55a2b;
         }
-
+        
         /* Footer */
         footer {
-            background: var(--dark);
+            background-color: var(--dark);
             color: white;
-            padding: 3rem 2rem 1rem;
+            padding: 60px 0 30px;
         }
-
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
+        
+        .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 40px;
+            margin-bottom: 40px;
         }
-
+        
         .footer-column h3 {
             font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: var(--accent);
         }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--primary);
-        }
-
-        .footer-column ul {
+        
+        .footer-links {
             list-style: none;
         }
-
-        .footer-column ul li {
+        
+        .footer-links li {
             margin-bottom: 10px;
         }
-
-        .footer-column a {
-            color: #bdc1c6;
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
             text-decoration: none;
             transition: all 0.3s;
         }
-
-        .footer-column a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
+        
         .social-icon:hover {
-            background: var(--primary);
+            background-color: var(--primary);
             transform: translateY(-3px);
         }
-
+        
         .copyright {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #bdc1c6;
             font-size: 0.9rem;
+            color: #aaa;
         }
-
+        
         /* Animations */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
-            100% { transform: translateY(0) rotate(0deg); }
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
         }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
-
+        
         /* Responsive Design */
         @media (max-width: 768px) {
-            .header-container {
+            .header-content {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 15px;
             }
             
             nav ul {
-                gap: 1rem;
+                gap: 15px;
             }
             
             .hero h1 {
                 font-size: 2.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
             
             .newsletter-form {
@@ -614,7 +544,7 @@
                 gap: 10px;
             }
             
-            .newsletter-input, .newsletter-button {
+            .newsletter-input, .newsletter-btn {
                 border-radius: 30px;
                 width: 100%;
             }
@@ -624,149 +554,160 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="header-container">
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-running"></i>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <div class="logo-text">grizz<span>letes</span></div>
                 </div>
-                <span>Sporting Gear Pro</span>
-            </div>
-            
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Men</a></li>
-                    <li><a href="#">Women</a></li>
-                    <li><a href="#">Kids</a></li>
-                    <li><a href="#">Sale</a></li>
-                    <li><a href="#">New Arrivals</a></li>
-                </ul>
-            </nav>
-            
-            <div class="header-actions">
-                <button class="icon-btn"><i class="fas fa-search"></i></button>
-                <button class="icon-btn"><i class="fas fa-user"></i></button>
-                <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                    </ul>
+                </nav>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <div class="cart-count">3</div>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-graphics">
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
-            <div class="floating-shape shape-3"></div>
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
         </div>
-        
-        <div class="hero-content">
-            <h1>Elevate Your Performance</h1>
-            <p>Discover high-performance sportswear engineered for athletes who demand the best. From running to yoga, we have everything you need to reach your peak.</p>
-            <a href="#" class="cta-button">Shop Now</a>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="categories">
-        <h2 class="section-title">Shop By Category</h2>
-        
-        <div class="categories-grid">
-            <div class="category-card">
-                <div class="category-graphic running-graphic">
-                    <i class="fas fa-running graphic-icon"></i>
-                    <div class="category-name">Running</div>
-                </div>
-            </div>
-            
-            <div class="category-card">
-                <div class="category-graphic basketball-graphic">
-                    <i class="fas fa-basketball-ball graphic-icon"></i>
-                    <div class="category-name">Basketball</div>
-                </div>
-            </div>
-            
-            <div class="category-card">
-                <div class="category-graphic yoga-graphic">
-                    <i class="fas fa-spa graphic-icon"></i>
-                    <div class="category-name">Yoga & Fitness</div>
-                </div>
-            </div>
-            
-            <div class="category-card">
-                <div class="category-graphic soccer-graphic">
-                    <i class="fas fa-futbol graphic-icon"></i>
-                    <div class="category-name">Soccer</div>
-                </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Zimbabwe's Fitness Revolution Starts Here</h1>
+                <p>Premium activewear inspired by the spirit of Zimbabwe. No pictures, just pure artistic expression!</p>
+                <a href="#" class="btn">Shop The Collection</a>
             </div>
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="featured-products">
-        <div class="products-container">
-            <h2 class="section-title">Featured Products</h2>
+    <!-- Catalogue Section -->
+    <section class="catalogue">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Collection</h2>
+            </div>
+            
+            <div class="filters">
+                <button class="filter-btn active">All Products</button>
+                <button class="filter-btn">Tops</button>
+                <button class="filter-btn">Bottoms</button>
+                <button class="filter-btn">Accessories</button>
+                <button class="filter-btn">New Arrivals</button>
+            </div>
             
             <div class="products-grid">
+                <!-- Product 1 -->
                 <div class="product-card">
-                    <div class="product-graphic product-1">
-                        <div class="product-shape shape-a"></div>
-                        <div class="product-shape shape-b"></div>
-                        <i class="fas fa-tshirt product-icon"></i>
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <div class="product-illustration" style="background-color: #FFD166; border-radius: 50%;"></div>
                     </div>
                     <div class="product-info">
-                        <h3>Pro Performance Tee</h3>
-                        <p>Moisture-wicking fabric with advanced ventilation technology.</p>
-                        <div class="product-price">
-                            <span class="price">$49.99</span>
-                            <button class="add-to-cart">Add to Cart</button>
+                        <div class="product-category">T-Shirt</div>
+                        <h3 class="product-title">Harare Heat Tee</h3>
+                        <div class="product-price">$34.99</div>
+                        <div class="product-actions">
+                            <button class="btn btn-outline">Quick View</button>
+                            <button class="btn">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Product 2 -->
                 <div class="product-card">
-                    <div class="product-graphic product-2">
-                        <div class="product-shape shape-a"></div>
-                        <div class="product-shape shape-b"></div>
-                        <i class="fas fa-shoe-prints product-icon"></i>
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-image">
+                        <div class="product-illustration" style="background-color: #EF476F; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
                     </div>
                     <div class="product-info">
-                        <h3>Elite Running Shoes</h3>
-                        <p>Lightweight design with maximum cushioning and support.</p>
-                        <div class="product-price">
-                            <span class="price">$129.99</span>
-                            <button class="add-to-cart">Add to Cart</button>
+                        <div class="product-category">Sports Bra</div>
+                        <h3 class="product-title">Nyanga Sports Bra</h3>
+                        <div class="product-price">$42.99</div>
+                        <div class="product-actions">
+                            <button class="btn btn-outline">Quick View</button>
+                            <button class="btn">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Product 3 -->
                 <div class="product-card">
-                    <div class="product-graphic product-3">
-                        <div class="product-shape shape-a"></div>
-                        <div class="product-shape shape-b"></div>
-                        <i class="fas fa-vest product-icon"></i>
+                    <div class="product-image">
+                        <div class="product-illustration" style="background-color: #06D6A0; border-radius: 10px 50px 10px 50px;"></div>
                     </div>
                     <div class="product-info">
-                        <h3>Training Jacket</h3>
-                        <p>Weather-resistant outer layer with breathable inner lining.</p>
-                        <div class="product-price">
-                            <span class="price">$89.99</span>
-                            <button class="add-to-cart">Add to Cart</button>
+                        <div class="product-category">Shorts</div>
+                        <h3 class="product-title">Victoria Falls Flow Shorts</h3>
+                        <div class="product-price">$39.99</div>
+                        <div class="product-actions">
+                            <button class="btn btn-outline">Quick View</button>
+                            <button class="btn">Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Product 4 -->
                 <div class="product-card">
-                    <div class="product-graphic product-4">
-                        <div class="product-shape shape-a"></div>
-                        <div class="product-shape shape-b"></div>
-                        <i class="fas fa-dumbbell product-icon"></i>
+                    <div class="product-badge">Limited</div>
+                    <div class="product-image">
+                        <div class="product-illustration" style="background-color: #118AB2; clip-path: circle(40% at 50% 50%);"></div>
                     </div>
                     <div class="product-info">
-                        <h3>Compression Shorts</h3>
-                        <p>Enhanced muscle support and recovery during intense workouts.</p>
-                        <div class="product-price">
-                            <span class="price">$39.99</span>
-                            <button class="add-to-cart">Add to Cart</button>
+                        <div class="product-category">Hoodie</div>
+                        <h3 class="product-title">Great Zimbabwe Hoodie</h3>
+                        <div class="product-price">$59.99</div>
+                        <div class="product-actions">
+                            <button class="btn btn-outline">Quick View</button>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-illustration" style="background-color: #073B4C; clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0 75%);"></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Leggings</div>
+                        <h3 class="product-title">Matopos Marble Leggings</h3>
+                        <div class="product-price">$49.99</div>
+                        <div class="product-actions">
+                            <button class="btn btn-outline">Quick View</button>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-badge">Sale</div>
+                    <div class="product-image">
+                        <div class="product-illustration" style="background-color: #7209B7; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;"></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Tank Top</div>
+                        <h3 class="product-title">Mutare Sunrise Tank</h3>
+                        <div class="product-price">$29.99 <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">$39.99</span></div>
+                        <div class="product-actions">
+                            <button class="btn btn-outline">Quick View</button>
+                            <button class="btn">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -774,107 +715,94 @@
         </div>
     </section>
 
-    <!-- Newsletter -->
+    <!-- Newsletter Section -->
     <section class="newsletter">
-        <div class="newsletter-content">
-            <h2>Stay in the Game</h2>
-            <p>Subscribe to our newsletter for exclusive deals, new arrivals, and fitness tips.</p>
-            
+        <div class="container">
+            <h2>Stay in the Loop</h2>
+            <p>Subscribe to our newsletter for exclusive deals, new arrivals, and fitness tips!</p>
             <form class="newsletter-form">
                 <input type="email" class="newsletter-input" placeholder="Your email address">
-                <button type="submit" class="newsletter-button">Subscribe</button>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>Sporting Gear Pro</h3>
-                <p>Your premier destination for high-performance sportswear and athletic equipment.</p>
-                <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Men's Collection</a></li>
+                        <li><a href="#">Women's Collection</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Sale Items</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Help</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <p>Follow us on social media for the latest updates and fitness inspiration!</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    </div>
                 </div>
             </div>
-            
-            <div class="footer-column">
-                <h3>Shop</h3>
-                <ul>
-                    <li><a href="#">Men's Apparel</a></li>
-                    <li><a href="#">Women's Apparel</a></li>
-                    <li><a href="#">Footwear</a></li>
-                    <li><a href="#">Accessories</a></li>
-                    <li><a href="#">New Arrivals</a></li>
-                </ul>
+            <div class="copyright">
+                &copy; 2023 Grizzletes.co.zw - Zimbabwe's Premier Fitness Wear. All rights reserved.
             </div>
-            
-            <div class="footer-column">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Returns & Exchanges</a></li>
-                    <li><a href="#">Size Guide</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Contact</h3>
-                <ul>
-                    <li><i class="fas fa-map-marker-alt"></i> 123 Sports Ave, Athletic City</li>
-                    <li><i class="fas fa-phone"></i> (555) 123-4567</li>
-                    <li><i class="fas fa-envelope"></i> info@sportinggearpro.com</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="copyright">
-            <p>&copy; 2023 Sporting Gear Pro. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Simple animation on scroll
+        // Simple filter functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // In a real implementation, you would filter products here
+                    // For this demo, we'll just show a simple alert
+                    alert(`Filtering by: ${this.textContent}`);
                 });
-            }, observerOptions);
-
-            // Animate elements on scroll
-            const animatedElements = document.querySelectorAll('.category-card, .product-card');
-            animatedElements.forEach(el => {
-                el.style.opacity = 0;
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(el);
             });
-
-            // Add to cart animation
-            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            
+            // Add to cart functionality
+            const addToCartButtons = document.querySelectorAll('.product-actions .btn:last-child');
+            const cartCount = document.querySelector('.cart-count');
+            let count = 3; // Starting count
+            
             addToCartButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    const originalText = this.textContent;
+                    count++;
+                    cartCount.textContent = count;
+                    
+                    // Animation feedback
                     this.textContent = 'Added!';
-                    this.style.background = '#34a853';
+                    this.style.backgroundColor = '#06D6A0';
                     
                     setTimeout(() => {
-                        this.textContent = originalText;
-                        this.style.background = '';
+                        this.textContent = 'Add to Cart';
+                        this.style.backgroundColor = '';
                     }, 1500);
                 });
             });
