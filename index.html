@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grizzletes | Zimbabwe's Premier Fitness Wear</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Base Styles */
         :root {
             --primary: #FF6B35;
             --secondary: #004E89;
@@ -20,7 +18,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
         body {
@@ -35,14 +33,13 @@
             padding: 0 20px;
         }
         
-        /* Header Styles */
         header {
             background-color: var(--dark);
             padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,.1);
         }
         
         .header-content {
@@ -59,12 +56,11 @@
         
         .logo-icon {
             color: var(--primary);
-            font-size: 2rem;
-            animation: pulse 2s infinite;
+            font-size: 1.8rem;
         }
         
         .logo-text {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: var(--light);
             letter-spacing: 1px;
@@ -77,23 +73,19 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 20px;
         }
         
         nav a {
             color: var(--light);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: color 0.3s;
+            font-size: 1rem;
+            transition: color .2s;
             position: relative;
         }
         
         nav a:hover {
-            color: var(--primary);
-        }
-        
-        nav a.active {
             color: var(--primary);
         }
         
@@ -103,16 +95,16 @@
             bottom: -5px;
             left: 0;
             width: 100%;
-            height: 3px;
+            height: 2px;
             background-color: var(--primary);
         }
         
         .cart-icon {
             position: relative;
             color: var(--light);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             cursor: pointer;
-            transition: color 0.3s;
+            transition: color .2s;
         }
         
         .cart-icon:hover {
@@ -131,17 +123,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 0.8rem;
+            font-size: .75rem;
             font-weight: bold;
         }
         
-        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--dark) 0%, var(--secondary) 100%);
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
             position: relative;
-            overflow: hidden;
         }
         
         .hero-content {
@@ -150,37 +140,37 @@
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             color: var(--light);
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,.2);
         }
         
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: var(--accent);
-            max-width: 700px;
-            margin: 0 auto 30px;
+            max-width: 600px;
+            margin: 0 auto 25px;
         }
         
         .btn {
             display: inline-block;
             background-color: var(--primary);
             color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
+            padding: 11px 28px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s;
+            font-size: 1rem;
+            transition: all .2s;
             border: none;
             cursor: pointer;
         }
         
         .btn:hover {
             background-color: #e55a2b;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,.15);
         }
         
         .btn-outline {
@@ -194,87 +184,39 @@
             color: white;
         }
         
-        /* Animated Background Elements */
-        .floating-shapes {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        
-        .shape {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 6s infinite ease-in-out;
-        }
-        
-        .shape:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .shape:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            top: 60%;
-            left: 80%;
-            animation-delay: 1s;
-        }
-        
-        .shape:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            top: 80%;
-            left: 20%;
-            animation-delay: 2s;
-        }
-        
-        .shape:nth-child(4) {
-            width: 100px;
-            height: 100px;
-            top: 30%;
-            left: 70%;
-            animation-delay: 3s;
-        }
-        
-        /* Catalogue Section */
         .catalogue {
-            padding: 80px 0;
+            padding: 60px 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
-            position: relative;
+            margin-bottom: 40px;
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--dark);
             display: inline-block;
+            position: relative;
+            padding-bottom: 15px;
         }
         
         .section-title h2::after {
             content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
             background-color: var(--primary);
-            margin: 10px auto;
-            border-radius: 2px;
         }
         
         .filters {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
+            gap: 12px;
+            margin-bottom: 35px;
             flex-wrap: wrap;
         }
         
@@ -282,11 +224,12 @@
             background-color: white;
             border: 2px solid var(--secondary);
             color: var(--secondary);
-            padding: 8px 20px;
+            padding: 7px 18px;
             border-radius: 20px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all .2s;
             font-weight: 600;
+            font-size: .95rem;
         }
         
         .filter-btn.active, .filter-btn:hover {
@@ -296,155 +239,156 @@
         
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 25px;
         }
         
         .product-card {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,.08);
+            transition: transform .2s, box-shadow .2s;
             position: relative;
         }
         
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,.1);
         }
         
         .product-badge {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 12px;
+            right: 12px;
             background-color: var(--primary);
             color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
+            padding: 4px 9px;
+            border-radius: 4px;
+            font-size: .75rem;
             font-weight: 700;
             z-index: 2;
         }
         
         .product-image {
-            height: 250px;
+            height: 220px;
             background-color: #f5f5f5;
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
-            overflow: hidden;
         }
         
         .product-illustration {
-            width: 80%;
-            height: 80%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            transition: transform 0.5s;
+            width: 75%;
+            height: 75%;
+            transition: transform .3s;
         }
         
         .product-card:hover .product-illustration {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
         
         .product-info {
-            padding: 20px;
+            padding: 18px;
         }
         
         .product-category {
             color: var(--secondary);
-            font-size: 0.9rem;
+            font-size: .85rem;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
         
         .product-title {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--dark);
         }
         
         .product-price {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .product-actions {
             display: flex;
-            justify-content: space-between;
+            gap: 8px;
         }
         
-        /* Newsletter Section */
+        .product-actions .btn {
+            flex: 1;
+            padding: 10px;
+            font-size: .9rem;
+        }
+        
         .newsletter {
             background-color: var(--secondary);
-            padding: 60px 0;
+            padding: 50px 0;
             text-align: center;
             color: white;
         }
         
         .newsletter h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
         
         .newsletter p {
-            max-width: 600px;
-            margin: 0 auto 30px;
-            font-size: 1.1rem;
+            max-width: 550px;
+            margin: 0 auto 25px;
+            font-size: 1rem;
         }
         
         .newsletter-form {
             display: flex;
-            max-width: 500px;
+            max-width: 450px;
             margin: 0 auto;
+            gap: 0;
         }
         
         .newsletter-input {
             flex: 1;
-            padding: 12px 20px;
+            padding: 11px 18px;
             border: none;
-            border-radius: 30px 0 0 30px;
-            font-size: 1rem;
+            border-radius: 25px 0 0 25px;
+            font-size: .95rem;
         }
         
         .newsletter-btn {
             background-color: var(--primary);
             color: white;
             border: none;
-            padding: 0 25px;
-            border-radius: 0 30px 30px 0;
+            padding: 0 22px;
+            border-radius: 0 25px 25px 0;
             font-weight: 700;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color .2s;
         }
         
         .newsletter-btn:hover {
             background-color: #e55a2b;
         }
         
-        /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
-            padding: 60px 0 30px;
+            padding: 50px 0 25px;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 35px;
+            margin-bottom: 35px;
         }
         
         .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
+            font-size: 1.15rem;
+            margin-bottom: 15px;
             color: var(--accent);
         }
         
@@ -453,13 +397,14 @@
         }
         
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .footer-links a {
             color: #ccc;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color .2s;
+            font-size: .95rem;
         }
         
         .footer-links a:hover {
@@ -468,75 +413,66 @@
         
         .social-icons {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 12px;
+            margin-top: 15px;
         }
         
         .social-icon {
-            display: flex;
+            display: inline-flex;
             justify-content: center;
             align-items: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255,255,255,.1);
             border-radius: 50%;
             color: white;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: all .2s;
+            font-size: .9rem;
         }
         
         .social-icon:hover {
             background-color: var(--primary);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
         
         .copyright {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: #aaa;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,.1);
+            font-size: .85rem;
+            color: #999;
         }
         
-        /* Animations */
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(10deg);
-            }
-        }
-        
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-        
-        /* Responsive Design */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                gap: 15px;
+                gap: 12px;
             }
             
             nav ul {
-                gap: 15px;
+                gap: 12px;
+            }
+            
+            nav a {
+                font-size: .9rem;
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: .95rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
             }
             
             .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 15px;
             }
             
             .newsletter-form {
@@ -545,21 +481,22 @@
             }
             
             .newsletter-input, .newsletter-btn {
-                border-radius: 30px;
+                border-radius: 25px;
                 width: 100%;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-paw"></i>
-                    </div>
+                    <div class="logo-icon">🐾</div>
                     <div class="logo-text">grizz<span>letes</span></div>
                 </div>
                 <nav>
@@ -568,35 +505,26 @@
                         <li><a href="#">Men</a></li>
                         <li><a href="#">Women</a></li>
                         <li><a href="#">Accessories</a></li>
-                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">New</a></li>
                     </ul>
                 </nav>
                 <div class="cart-icon">
-                    <i class="fas fa-shopping-bag"></i>
-                    <div class="cart-count">3</div>
+                    🛍️ <div class="cart-count">3</div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="floating-shapes">
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-        </div>
         <div class="container">
             <div class="hero-content">
-                <h1>Zimbabwe's Fitness Revolution Starts Here</h1>
+                <h1>Zimbabwe's Fitness Revolution</h1>
                 <p>Premium activewear inspired by the spirit of Zimbabwe.</p>
-                <a href="#" class="btn">Shop The Collection</a>
+                <a href="#" class="btn">Shop Now</a>
             </div>
         </div>
     </section>
 
-    <!-- Catalogue Section -->
     <section class="catalogue">
         <div class="container">
             <div class="section-title">
@@ -604,15 +532,14 @@
             </div>
             
             <div class="filters">
-                <button class="filter-btn active">All Products</button>
+                <button class="filter-btn active">All</button>
                 <button class="filter-btn">Tops</button>
                 <button class="filter-btn">Bottoms</button>
                 <button class="filter-btn">Accessories</button>
-                <button class="filter-btn">New Arrivals</button>
+                <button class="filter-btn">New</button>
             </div>
             
             <div class="products-grid">
-                <!-- Product 1 -->
                 <div class="product-card">
                     <div class="product-badge">New</div>
                     <div class="product-image">
@@ -623,15 +550,14 @@
                         <h3 class="product-title">Harare Heat Tee</h3>
                         <div class="product-price">$34.99</div>
                         <div class="product-actions">
-                            <button class="btn btn-outline">Quick View</button>
-                            <button class="btn">Add to Cart</button>
+                            <button class="btn btn-outline">View</button>
+                            <button class="btn">Add</button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Product 2 -->
                 <div class="product-card">
-                    <div class="product-badge">Bestseller</div>
+                    <div class="product-badge">Best</div>
                     <div class="product-image">
                         <div class="product-illustration" style="background-color: #EF476F; clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div>
                     </div>
@@ -640,74 +566,70 @@
                         <h3 class="product-title">Nyanga Sports Bra</h3>
                         <div class="product-price">$42.99</div>
                         <div class="product-actions">
-                            <button class="btn btn-outline">Quick View</button>
-                            <button class="btn">Add to Cart</button>
+                            <button class="btn btn-outline">View</button>
+                            <button class="btn">Add</button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Product 3 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <div class="product-illustration" style="background-color: #06D6A0; border-radius: 10px 50px 10px 50px;"></div>
+                        <div class="product-illustration" style="background-color: #06D6A0; border-radius: 10px 50px;"></div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Shorts</div>
-                        <h3 class="product-title">Victoria Falls Flow Shorts</h3>
+                        <h3 class="product-title">Victoria Falls Shorts</h3>
                         <div class="product-price">$39.99</div>
                         <div class="product-actions">
-                            <button class="btn btn-outline">Quick View</button>
-                            <button class="btn">Add to Cart</button>
+                            <button class="btn btn-outline">View</button>
+                            <button class="btn">Add</button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Product 4 -->
                 <div class="product-card">
                     <div class="product-badge">Limited</div>
                     <div class="product-image">
-                        <div class="product-illustration" style="background-color: #118AB2; clip-path: circle(40% at 50% 50%);"></div>
+                        <div class="product-illustration" style="background-color: #118AB2; border-radius: 50%;"></div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Hoodie</div>
                         <h3 class="product-title">Great Zimbabwe Hoodie</h3>
                         <div class="product-price">$59.99</div>
                         <div class="product-actions">
-                            <button class="btn btn-outline">Quick View</button>
-                            <button class="btn">Add to Cart</button>
+                            <button class="btn btn-outline">View</button>
+                            <button class="btn">Add</button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Product 5 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <div class="product-illustration" style="background-color: #073B4C; clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0 75%);"></div>
+                        <div class="product-illustration" style="background-color: #073B4C; border-radius: 30% 70%;"></div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Leggings</div>
-                        <h3 class="product-title">Matopos Marble Leggings</h3>
+                        <h3 class="product-title">Matopos Leggings</h3>
                         <div class="product-price">$49.99</div>
                         <div class="product-actions">
-                            <button class="btn btn-outline">Quick View</button>
-                            <button class="btn">Add to Cart</button>
+                            <button class="btn btn-outline">View</button>
+                            <button class="btn">Add</button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Product 6 -->
                 <div class="product-card">
                     <div class="product-badge">Sale</div>
                     <div class="product-image">
-                        <div class="product-illustration" style="background-color: #7209B7; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;"></div>
+                        <div class="product-illustration" style="background-color: #7209B7; border-radius: 30% 70% 70% 30%;"></div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Tank Top</div>
                         <h3 class="product-title">Mutare Sunrise Tank</h3>
-                        <div class="product-price">$29.99 <span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">$39.99</span></div>
+                        <div class="product-price">$29.99 <span style="text-decoration: line-through; color: #999; font-size: .85rem;">$39.99</span></div>
                         <div class="product-actions">
-                            <button class="btn btn-outline">Quick View</button>
-                            <button class="btn">Add to Cart</button>
+                            <button class="btn btn-outline">View</button>
+                            <button class="btn">Add</button>
                         </div>
                     </div>
                 </div>
@@ -715,95 +637,80 @@
         </div>
     </section>
 
-    <!-- Newsletter Section -->
     <section class="newsletter">
         <div class="container">
-            <h2>Stay in the Loop</h2>
-            <p>Subscribe to our newsletter for exclusive deals, new arrivals, and fitness tips!</p>
+            <h2>Stay Updated</h2>
+            <p>Subscribe for exclusive deals and new arrivals!</p>
             <form class="newsletter-form">
-                <input type="email" class="newsletter-input" placeholder="Your email address">
+                <input type="email" class="newsletter-input" placeholder="Your email" required>
                 <button type="submit" class="newsletter-btn">Subscribe</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Shop</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Men's Collection</a></li>
-                        <li><a href="#">Women's Collection</a></li>
+                        <li><a href="#">Men's</a></li>
+                        <li><a href="#">Women's</a></li>
                         <li><a href="#">Accessories</a></li>
                         <li><a href="#">New Arrivals</a></li>
-                        <li><a href="#">Sale Items</a></li>
+                        <li><a href="#">Sale</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Help</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
                         <li><a href="#">Size Guide</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Connect</h3>
-                    <p>Follow us on social media for the latest updates and fitness inspiration!</p>
+                    <p style="margin-bottom: 12px; font-size: .95rem;">Follow us online!</p>
                     <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">𝕏</a>
+                        <a href="#" class="social-icon">📷</a>
+                        <a href="#" class="social-icon">▶</a>
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2026 Grizzletes.co.zw - Zimbabwe's Premier Fitness Wear. All rights reserved.
+                &copy; 2026 Grizzletes.co.zw - Zimbabwe's Premier Fitness Wear
             </div>
         </div>
     </footer>
 
     <script>
-        // Simple filter functionality
         document.addEventListener('DOMContentLoaded', function() {
             const filterButtons = document.querySelectorAll('.filter-btn');
+            const addToCartButtons = document.querySelectorAll('.product-actions .btn:last-child');
+            const cartCount = document.querySelector('.cart-count');
+            let count = 3;
             
             filterButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    // Remove active class from all buttons
                     filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
                     this.classList.add('active');
-                    
-                    // In a real implementation, you would filter products here
-                    // For this demo, we'll just show a simple alert
-                    alert(`Filtering by: ${this.textContent}`);
                 });
             });
             
-            // Add to cart functionality
-            const addToCartButtons = document.querySelectorAll('.product-actions .btn:last-child');
-            const cartCount = document.querySelector('.cart-count');
-            let count = 3; // Starting count
-            
             addToCartButtons.forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
                     count++;
                     cartCount.textContent = count;
-                    
-                    // Animation feedback
-                    this.textContent = 'Added!';
-                    this.style.backgroundColor = '#06D6A0';
-                    
+                    this.textContent = '✓';
                     setTimeout(() => {
-                        this.textContent = 'Add to Cart';
-                        this.style.backgroundColor = '';
-                    }, 1500);
+                        this.textContent = 'Add';
+                    }, 1200);
                 });
             });
         });
